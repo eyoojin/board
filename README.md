@@ -54,3 +54,12 @@ urlpatterns = [
 ```python
 TEMPLATES = [{'DIRS': [BASE_DIR / 'templates']}]
 ```
+- `models.py`
+    - `class Article()`에 들어오는 data field 설정
+
+- migration
+    - 번역본 생성 -> 이주
+```shell
+python manage.py makemigrations
+python manage.py migrate
+```
