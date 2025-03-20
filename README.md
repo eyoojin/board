@@ -63,3 +63,15 @@ TEMPLATES = [{'DIRS': [BASE_DIR / 'templates']}]
 python manage.py makemigrations
 python manage.py migrate
 ```
+
+- 관리자 페이지에서 Article 모델 관리하기 위한 등록 
+    - `admin.py`
+```python
+from .models import Article
+admin.site.register(Article)
+```
+
+- 관리자 계정 생성
+```shell
+python manage.py createsuperuser
+```
