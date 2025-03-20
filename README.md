@@ -128,3 +128,34 @@ urlpatterns = [
 <a href="{% url 'articles:index' %}"></a>
 <a href="{% url 'articles:detail' article.id %}"></a>
 ```
+
+- Create 기능 구현
+```html
+<!-- margin-bottom-3 -->
+<div class="mb-3"></div>
+<textarea></textarea>
+
+<!-- 똑같은 코드 -->
+<button type="submit" class="btn btn-primary">Send</button>
+<input type="submit" class="btn btn-primary" value="Send">
+```
+
+- CRUD - REST
+    - Read = GET -> /articles
+    - Create = POST -> /articles/:id
+    - Update = UPDATE / PATCH -> /articles/:id
+    - Delete = DELETE -> /articles/:id
+
+- CSRF 토큰을 넣기 -> 개발자 도구 열어서 확인 가능
+```html
+<!-- RESTful -->
+<form action="{% url 'articles:create' %}" method="POST">
+    {% csrf_token %}
+```
+
+- 저장된 데이터 가져오기
+```python
+request.POST.get('title')
+
+return redirect('articles:detail', id=article.id)
+```
