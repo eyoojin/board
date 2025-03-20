@@ -166,3 +166,6 @@ return redirect('articles:detail', id=article.id)
 - Update 기능 구현
     - `new.html` 복사
     - `<form action="{% url 'articles:update' article.id %}" method="POST">` 수정
+
+- 시간 설정
+    - `settings.py` -> `TIME_ZONE = 'Asia/seoul'`
