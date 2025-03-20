@@ -109,3 +109,22 @@ python manage.py createsuperuser
     - 디자인
         - `div.container`
         - `navbar`
+
+- 게시물 상세보기 Read 1 기능 구현
+    - `Article.objects.get(id=id)`
+    - 디자인
+        - `div.card`
+
+- 경로를 변수로 설정
+```python
+app_name = 'articles'
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+```
+```html
+<a href="{% url 'app_name:name' %}"></a>
+<a href="{% url 'articles:index' %}"></a>
+<a href="{% url 'articles:detail' article.id %}"></a>
+```

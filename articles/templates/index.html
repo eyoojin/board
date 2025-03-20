@@ -4,8 +4,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th>title</th>
-                <th>content</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Link</th>
             </tr>
         </thead>        
         <tbody>
@@ -13,6 +14,7 @@
             <tr>
                 <td>{{article.title}}</td>
                 <td>{{article.content}}</td>
+                <td><a href="{% url 'articles:detail' article.id %}" class="btn btn-primary">detail</a></td>
             </tr>
             {% endfor %}
         </tbody>
