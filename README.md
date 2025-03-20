@@ -1,3 +1,5 @@
+# 오늘 목표: 중복 줄이기
+
 ## 0. setting
 
 - 가상환경 설정
@@ -7,6 +9,48 @@
 
 - 프로젝트 생성
     - 프로젝트 이름 = 서비스 이름
+
 - 앱 생성
     - 앱 이름 = 내가 다루고자 하는 모델/데이터의 복수형
     - 장고에게 앱 등록했다고 알려주기
+
+- urls.py
+    - Function views -> 지금까지 우리가 url 생성했던 방법
+    - Including another URLconf -> 오늘 해볼 방법
+- include 함수 사용한 path 설정 
+    - `path('articles/', include('articles.urls'))`
+    - `from django.urls import include`
+    - `articles/urls.py` 생성
+- articles/urls.py에서 path 설정
+```python
+from django.urls import path
+from . import views
+
+# 'articles/' 생략
+urlpatterns = [
+    path('', views.index)
+]
+```
+
+- `views.py`에서 함수 생성
+
+- `articles/templates/`
+- `../templates/`
+    - `base.html` 구멍 뚫기
+```html
+<!-- base.html -->
+{% block 변수이름 %}
+{% endblock %}
+
+<!-- index.html -->
+{% extends 'base.html' %}
+
+{% block 변수이름 %}
+<h1>index</h1>
+{% endblock %}
+```
+- 장고에게 알려주기
+    - `settings.py`
+```python
+TEMPLATES = [{'DIRS': [BASE_DIR / 'templates']}]
+```
