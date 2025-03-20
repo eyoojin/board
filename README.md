@@ -169,3 +169,7 @@ return redirect('articles:detail', id=article.id)
 
 - 시간 설정
     - `settings.py` -> `TIME_ZONE = 'Asia/seoul'`
+
+- 언어 설정
+    - `/admin/` 언어가 한국어로 바뀜
+        - `LANGUAGE_CODE = 'ko-kr'`
