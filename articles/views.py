@@ -39,3 +39,26 @@ def delete(request, id):
     article.delete()
 
     return redirect('articles:index')
+
+def edit(request, id):
+    article = Article.objects.get(id=id)
+
+    context = {
+        'article': article,
+    }
+
+    return render(request, 'edit.html', context)
+
+def update(request, id):
+    # 기존 정보
+    article = Article.objects.get(id=id)
+
+    # 새로운 정보
+    title = request.POST.get('title')
+    content = request.POST.get('content')
+
+    article.title = title
+    article.content = content
+    article.save()
+
+    return redirect('articles:detail', id=article.id)

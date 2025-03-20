@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<div class="card mt-3">
+<div class="card mt-2">
     <div class="card-header">
         {{article.title}}
     </div>
@@ -14,6 +14,6 @@
     </div>
 </div>
 
-<a href="{% url 'articles:delete' article.id %}" class="btn btn-danger mt-3">Delete</a>
-
+<a href="{% url 'articles:delete' article.id %}" class="btn btn-danger mt-2">Delete</a>
+<a href="{% url 'articles:edit' article.id %}" class="btn btn-warning mt-2">Update</a>
 {% endblock %}
