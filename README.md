@@ -75,3 +75,37 @@ admin.site.register(Article)
 ```shell
 python manage.py createsuperuser
 ```
+
+---세팅---
+
+- `base.html`에 bootstrap 적용
+    - table 사용
+```html
+<!-- 표 -->
+<table class="table">
+    <!-- table haed -->
+    <thead>
+        <!-- 가로로 나누기 -->
+        <tr>
+            <!-- 세로로 나누기 -->
+            <th>title</th>
+            <th>content</th>
+        </tr>
+    </thead> 
+    
+    <!-- table body -->
+    <tbody>
+        <tr>
+            <!-- 세로로 나누기 -->
+            <td>temp title</td>
+            <td>temp content</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+- 전체 게시판 Read all 기능 구현
+    - `views.py` -> `Article.objects.all()`
+    - 디자인
+        - `div.container`
+        - `navbar`
