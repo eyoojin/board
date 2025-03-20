@@ -159,3 +159,6 @@ request.POST.get('title')
 
 return redirect('articles:detail', id=article.id)
 ```
+
+- Delete 기능 구현
+    - `<a class="btn btn-danger mt-3"></a>`

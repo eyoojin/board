@@ -33,3 +33,9 @@ def create(request):
     article.save()
 
     return redirect('articles:detail', id=article.id)
+
+def delete(request, id):
+    article = Article.objects.get(id=id)
+    article.delete()
+
+    return redirect('articles:index')
